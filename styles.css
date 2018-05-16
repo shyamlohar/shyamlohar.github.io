@@ -1,13 +1,31 @@
+body {
+  font-family: roboto mono,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+header {
+  position: relative;
+  background-color: #6957FF;
+  height: 100vh;
+}
+
+header #particles-js {
+  height: 100%;
+  width: 100%;
+}
+
 nav {
   position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
-  background-color: #292E49;
   height: 13vh;
   justify-content: space-between;
   align-items: center;
@@ -31,10 +49,14 @@ nav .links li a {
   align-items: center;
   font-family: sans-serif;
   text-transform: capitalize;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 nav .links li a:hover {
-  color: #a5abcc;
+  color: #58E4D2;
 }
 
 nav .logo {
@@ -42,16 +64,14 @@ nav .logo {
   color: white;
   flex-grow: 1;
   padding: 2px 0;
-}
-
-nav .logo img {
-  height: 50px;
-  width: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 nav .ham {
   display: none;
-  color: white;
+  color: #6881a9;
   margin: 0 10px;
   height: 60%;
   border-radius: 6px;
@@ -78,7 +98,8 @@ nav .links a {
   align-items: center;
   z-index: 3;
   flex-direction: column;
-  background: #292E49;
+  color: #6881a9;
+  background-color: #fff;
   transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-property: all;
   box-shadow: 0 13px 19px -9px rgba(0, 0, 0, 0.75);
@@ -86,7 +107,7 @@ nav .links a {
 
 .hampopup a {
   text-decoration: none;
-  color: white;
+  color: #6881a9;
   display: block;
   width: 90%;
   height: 10vh;
@@ -94,17 +115,136 @@ nav .links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 0.5px solid #4E6271;
+  border-bottom: 1px solid #e7e7e7;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 .hampopup a:hover {
-  background: #202439;
-  color: #fff;
+  color: #58E4D2;
+}
+
+.terminalem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 60vh;
+}
+
+.terminalem .window {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 2rem;
+  box-shadow: 0 0.25rem 0.5rem #12181e;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.terminalem .bar {
+  background: rgba(0, 0, 0, 0.8);
+  height: 10%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.terminalem .btn, .terminalem .btn::before, .terminalem .btn::after {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  display: block;
+}
+
+.terminalem .btn {
+  background: #f6b73e;
+  position: relative;
+  margin-left: 38px;
+  top: 12px;
+}
+
+.terminalem .btn::before, .terminalem .btn::after {
+  content: " ";
+  position: absolute;
+}
+
+.terminalem .btn::before {
+  background: #f55551;
+  margin-left: -20px;
+}
+
+.terminalem .btn::after {
+  background: #32c146;
+  margin-left: 20px;
+}
+
+.terminalem .body {
+  height: 90%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 18px;
+  box-sizing: border-box;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.terminalem .body pre {
+  margin: 0;
+}
+
+.terminalem .body .pulse {
+  -webkit-animation: pulse 1s ease-in-out infinite;
+  -moz-animation: pulse 1s ease-in-out infinite;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminalem .command {
+  color: #32c146;
+}
+
+.terminalem .comment {
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
   nav {
     position: absolute;
+    background: linear-gradient(to bottom, #f6faff 0%, #f6faff 49%, #f6faff 53%, #f6faff 100%);
+    color: black;
   }
   nav .links {
     display: none;
@@ -112,6 +252,7 @@ nav .links a {
   nav .logo {
     display: flex;
     padding: 2px;
+    color: #6881a9;
   }
   nav .ham {
     display: flex;
