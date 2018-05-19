@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .skills {
+            padding: 40px;
+
+            h6 {
+                margin: 10px 0;
+            }
+            .bar {
+                height: 10px;
+                width: 100%;
+                background-color: grey;
+                .progress {
+                    height: 100%;
+                    width: 10%;
+                    background-color: #f55551;
+                }
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="skills">
+        <h6 data-percent="95">Html</h6>
+        <div class="bar">
+            <div class="progress"></div>
+        </div>
+        <h6 data-percent="90">Css</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="78">SCSS</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="84">JavaScript</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="70">Jquery</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="40">Angular 5</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="90">Python</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6 data-percent="42"> Django Framework</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+        <h6>MySQL</h6>
+        <div class="bar">
+            <div class="progress" style="width: 8%"></div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            var heads = $('.skills h6')
+
+            for (let a of heads) {
+                let widthlength = a.dataset.percent
+                $(a).next().children().animate({ width: `${widthlength}%` }, 1000, 'swing')
+            }
+
+        })
+    </script>
+</body>
+
+</html>
