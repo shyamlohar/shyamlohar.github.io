@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var typed = new Typed('.typed', {
-        strings: ['', 'Hello, I’m Shyam.', ' I’m front-end UI/UX Developer.', 'Thanks for visiting my site.',],
+        strings: ['', 'Hello, I’m Shyam.', ' I’m a front-end UI/UX Developer.', 'Thanks for visiting my site.',],
         typeSpeed: 0,
         backSpeed: 0,
         // fadeOut: true,
